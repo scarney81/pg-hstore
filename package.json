@@ -1,0 +1,20 @@
+{
+  "author": "Seth Carney <scarney81@gmail.com> (https://github.com/scarney81)",
+  "name": "node-hstore",
+  "description": "An module for serializing and deserializing JSON data in to hstore format",
+  "version": "0.0.1",
+  "homepage": "https://github.com/scarney81/node-hstore",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:scarney81/node-hstore.git"
+  },
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">= 0.6.11"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "1.2.x",
+    "should": "0.6.x"
+  }
+}
