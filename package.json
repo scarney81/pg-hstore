@@ -2,17 +2,21 @@
   "author": "Seth Carney <scarney81@gmail.com> (https://github.com/scarney81)",
   "name": "node-hstore",
   "description": "An module for serializing and deserializing JSON data in to hstore format",
+  "private": false,
+  "keywords": ["pg", "postgres", "hstore"],
   "version": "0.0.1",
+  "main": "lib/index.js",
   "homepage": "https://github.com/scarney81/node-hstore",
+  "bugs": {
+    "url": "https://github.com/Eloqua/eloqua-request/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:scarney81/node-hstore.git"
   },
-  "main": "lib/index.js",
   "engines": {
     "node": ">= 0.6.11"
   },
-  "dependencies": {},
   "devDependencies": {
     "mocha": "1.2.x",
     "should": "0.6.x"
