@@ -18,7 +18,7 @@
     "mocha": "1.2.x",
     "should": "0.6.x"
   },
-  "engines": [
+  "engines": {
     "node": ">= 0.6.11"
-  ]
+  }
 }
