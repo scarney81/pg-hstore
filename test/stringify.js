@@ -3,7 +3,7 @@ var mocha  = require('mocha'),
     should = require('should'),
     hstore = require('../lib/index.js');
 
-describe('node-hstore.stringify', function() {
+describe('pg-hstore.stringify', function() {
   it('should hstore encode a string', function(done) {
     var source = { foo: "bar" };
     hstore.stringify(source, function(target) {

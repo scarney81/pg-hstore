@@ -3,7 +3,7 @@ var mocha  = require('mocha'),
     should = require('should'),
     hstore = require('../lib/index.js');
 
-describe('node-hstore.parse', function() {
+describe('pg-hstore.parse', function() {
   it('should hstore parse an hstore string', function(done) {
     var source = '"foo"=>"bar"';
     hstore.parse(source, function(target) {
