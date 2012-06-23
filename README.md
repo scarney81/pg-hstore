@@ -1,16 +1,16 @@
-node-hstore
+pg-hstore
 ===========
 
 A node package for serializing and deserializing JSON data to hstore format
 
-## Install node-hstore
+## Install pg-hstore
 
-     ```$ npm install node-hstore```
+     ```$ npm install pg-hstore```
 
 ## Usage
 ### stringify
 
-     var hstore = require('node-hstore');
+     var hstore = require('pg-hstore');
      var source = { foo: "oof", bar: "rab", baz: "zab" };
      hstore.stringify(source, function(result) {
        ...
@@ -20,7 +20,7 @@ A node package for serializing and deserializing JSON data to hstore format
 
 ### parse
 
-     var hstore = require('node-hstore');
+     var hstore = require('pg-hstore');
      var source = '"foo"=>"oof", "bar"=>"rab", "baz"=>"zab"';
      hstore.stringify(source, function(result) {
        ...
