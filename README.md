@@ -27,7 +27,7 @@ hstore.stringify(source, function(result) {
 ```javascript
 var hstore = require('pg-hstore');
 var source = '"foo"=>"oof", "bar"=>"rab", "baz"=>"zab"';
-hstore.stringify(source, function(result) {
+hstore.parse(source, function(result) {
   ...
   // result = { foo: "oof", bar: "rab", baz: "zab" } 
   ...
