@@ -9,7 +9,6 @@ describe('pg-hstore.stringify', function() {
     hstore.stringify(source, function(target) {
       should.exist(target);
       target.should.equal('"foo"=>"bar"');
-      console.log(target);
       done();
     });
   });
@@ -36,7 +35,43 @@ describe('pg-hstore.stringify', function() {
     var source = { foo: null };
     hstore.stringify(source, function(target) {
       should.exist(target);
-      target.should.equal('"foo"=>""');
+      target.should.equal('"foo"=>NULL');
+      done();
+    });
+  });
+
+  it('should hstore encode a null string value', function(done) {
+    var source = { foo: "null" };
+    hstore.stringify(source, function(target) {
+      should.exist(target);
+      target.should.equal('"foo"=>"null"');
+      done();
+    });
+  });
+
+  it('should hstore encode single quotes correctly', function(done) {
+    var source = { 'foo \'quotes\'': "with \'quotes\'" };
+    hstore.stringify(source, function(target) {
+      should.exist(target);
+      target.should.equal('"foo \'\'quotes\'\'"=>"with \'\'quotes\'\'"');
+      done();
+    });
+  });
+
+  it('should hstore encode double quotes correctly', function(done) {
+    var source = { foo: "with \"quotes\"" };
+    hstore.stringify(source, function(target) {
+      should.exist(target);
+      target.should.equal('"foo"=>"with \\"quotes\\""');
+      done();
+    });
+  });
+
+  it('should hstore encode double quote keys correctly', function(done) {
+    var source = { 'foo \"quotes\"': "with \"quotes\"" };
+    hstore.stringify(source, function(target) {
+      should.exist(target);
+      target.should.equal('"foo \\"quotes\\""=>"with \\"quotes\\""');
       done();
     });
   });
