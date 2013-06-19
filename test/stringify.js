@@ -75,4 +75,13 @@ describe('pg-hstore.stringify', function() {
       done();
     });
   });
+
+  it('should optionally not sanitize output', function(done) {
+    var source = { 'foo\'"\\': "bar" };
+    hstore.stringify(source, function(target) {
+      should.exist(target);
+      target.should.equal('"foo\'"\\"=>"bar"');
+      done();
+    }, true);
+  });
 });
