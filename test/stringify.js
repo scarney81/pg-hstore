@@ -75,4 +75,13 @@ describe('pg-hstore.stringify', function() {
       done();
     });
   });
+
+  it('should hstore encode colon correctly', function(done) {
+    var source = { 'foo': "with:colon" };
+    hstore.stringify(source, function(target) {
+      should.exist(target);
+      target.should.equal('"foo"=>"with\\:colon"');
+      done();
+    });
+  });
 });
