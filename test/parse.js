@@ -23,16 +23,16 @@ describe('pg-hstore.parse', function() {
       done();
     });
   });
-  
+
   it('should hstore parse an escaped quoted string with quotes', function(done) {
-    var source = '"foo"=>"\"bar\""';
+    var source = '"foo"=>"\\"bar\\""';
     hstore.parse(source, function(target) {
       should.exist(target);
       target.foo.should.equal('"bar"');
       done();
     });
   });
-  
+
   it('should hstore parse a string with commas', function(done) {
     var source = '"foo"=>"bar,foo,bar"';
     hstore.parse(source, function(target) {
@@ -41,9 +41,9 @@ describe('pg-hstore.parse', function() {
       done();
     });
   });
-  
+
   it('should hstore parse a string with advanced types', function(done) {
-    var source = '"foo"=>"{"key":"value","key2":"value"}"';
+    var source = '"foo"=>"{\\"key\\":\\"value\\",\\"key2\\":\\"value\\"}"';
     hstore.parse(source, function(target) {
       should.exist(target);
       target.foo.should.equal('{"key":"value","key2":"value"}');
