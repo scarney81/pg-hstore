@@ -3,6 +3,7 @@
   'use strict';
 
   var should = require('should'),
+      assert= require('assert'),
       HStore = require('../lib/index.js'),
       hstore;
 
@@ -54,6 +55,17 @@
       hstore.parse(source, function (target) {
         should.exist(target);
         target.foo.should.equal('{"key":"value","key2":"value"}');
+        done();
+      });
+    });
+
+    it('should hstore parse a string with NULL values', function (done) {
+      var source = '"foo"=>"oof","bar"=>NULL,"baz"=>"zab"';
+      hstore.parse(source, function (target) {
+        should.exist(target);
+        target.foo.should.equal('oof');
+        assert.equal(target.bar, null);
+        target.baz.should.equal('zab');
         done();
       });
     });
