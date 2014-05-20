@@ -69,5 +69,16 @@
         done();
       });
     });
+
+    it('should hstore parse a string with \n values', function (done) {
+      var source = '"foo"=>"o\rof","bar"=>NULL,"baz"=>"z\nab"';
+      hstore.parse(source, function (target) {
+        should.exist(target);
+        target.foo.should.equal('o\rof');
+        assert.equal(target.bar, null);
+        target.baz.should.equal('z\nab');
+        done();
+      });
+    });
   });
 })();
