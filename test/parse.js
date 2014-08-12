@@ -21,6 +21,15 @@
       });
     });
 
+    it('should hstore parse an empty hstore string', function (done) {
+      var source = '';
+      hstore.parse(source, function (target) {
+        should.exist(target);
+        target.should.eql({});
+        done();
+      });
+    });
+
     it('should hstore parse an hstore string with multiple values', function (done) {
       var source = '"foo"=>"oof","bar"=>"rab","baz"=>"zab"';
       hstore.parse(source, function (target) {
