@@ -15,7 +15,7 @@ $ npm install pg-hstore
 ### stringify
 
 ```javascript
-var hstore = require('pg-hstore');
+var hstore = require('pg-hstore')();
 var source = { foo: "oof", bar: "rab", baz: "zab" };
 hstore.stringify(source, function(result) {
   ...
@@ -27,7 +27,7 @@ hstore.stringify(source, function(result) {
 ### parse
 
 ```javascript
-var hstore = require('pg-hstore');
+var hstore = require('pg-hstore')();
 var source = '"foo"=>"oof", "bar"=>"rab", "baz"=>"zab"';
 hstore.parse(source, function(result) {
   ...
