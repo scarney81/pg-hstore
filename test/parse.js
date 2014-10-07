@@ -89,5 +89,15 @@
         done();
       });
     });
+
+    it('should hstore parse a array', function(done){
+        var source = '"foo"=>"oof", "bar"=>"{baz,zab}"';
+        hstore.parse(source, function(target){
+            should.exist(target);
+            target.foo.should.equal('oof');
+            target.bar.should.eql(["baz", "zab"]);
+            done();
+        });
+    });
   });
 })();
