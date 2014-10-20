@@ -50,6 +50,24 @@
       });
     });
 
+    it('should hstore parse an escaped quoted string with single quotes', function (done) {
+      var source = '"foo"=>"\'\'bar\'\'"';
+      hstore.parse(source, function (target) {
+        should.exist(target);
+        target.foo.should.equal('\'bar\'');
+        done();
+      });
+    });
+
+    it('should hstore parse a string with escaped backslashes', function (done) {
+      var source = '"foo"=>"\\\\f0123"';
+      hstore.parse(source, function (target) {
+        should.exist(target);
+        target.foo.should.equal('\\f0123');
+        done();
+      });
+    });
+
     it('should hstore parse a string with commas', function (done) {
       var source = '"foo"=>"bar,foo,bar"';
       hstore.parse(source, function (target) {
