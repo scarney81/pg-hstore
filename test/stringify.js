@@ -39,6 +39,15 @@
         });
       });
 
+      it('should hstore encode an object', function (done) {
+        var source = { foo: { bar: 1000 } };
+        hstore.stringify(source, function (target) {
+          should.exist(target);
+          target.should.equal('"foo"=>"[object Object]"');
+          done();
+        });
+      });
+
       it('should hstore encode a null value', function (done) {
         var source = { foo: null };
         hstore.stringify(source, function (target) {
