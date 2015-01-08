@@ -19,11 +19,11 @@
     "url": "git@github.com:scarney81/pg-hstore.git"
   },
   "dependencies": {
-    "underscore": "*"
+    "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "mocha": "2.1.0",
-    "should": "4.4.2"
+    "mocha": "^2.1.0",
+    "should": "^4.4.2"
   },
   "engines": {
     "node": ">= 0.8.x"
