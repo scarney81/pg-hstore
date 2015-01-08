@@ -3,7 +3,11 @@
   "name": "pg-hstore",
   "description": "An module for serializing and deserializing JSON data in to hstore format",
   "private": false,
-  "keywords": ["pg", "postgres", "hstore"],
+  "keywords": [
+    "pg",
+    "postgres",
+    "hstore"
+  ],
   "version": "2.2.0",
   "main": "lib/index.js",
   "homepage": "https://github.com/scarney81/pg-hstore",
@@ -18,8 +22,8 @@
     "underscore": "*"
   },
   "devDependencies": {
-    "mocha": "1.2.x",
-    "should": "0.6.x"
+    "mocha": "2.1.0",
+    "should": "4.4.2"
   },
   "engines": {
     "node": ">= 0.8.x"
