@@ -107,5 +107,15 @@
         done();
       });
     });
+
+    it('should hstore parse a string ending with \\', function (done) {
+      var source = '"url"=>"http://google.com\\\\","foo"=>"bar"';
+      hstore.parse(source, function (target) {
+        should.exist(target);
+        target.url.should.equal('http://google.com\\');
+        target.foo.should.equal('bar');
+        done();
+      });
+    });
   });
 })();
