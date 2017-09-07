@@ -8,6 +8,7 @@
     "postgres",
     "hstore"
   ],
+  "license": "MIT",
   "version": "2.3.2",
   "main": "lib/index.js",
   "homepage": "https://github.com/scarney81/pg-hstore",
