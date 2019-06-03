@@ -8,7 +8,7 @@
     "postgres",
     "hstore"
   ],
-  "version": "2.3.2",
+  "version": "2.3.3",
   "main": "lib/index.js",
   "homepage": "https://github.com/scarney81/pg-hstore",
   "bugs": {
