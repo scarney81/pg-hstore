@@ -9,7 +9,7 @@
     "hstore"
   ],
   "license": "MIT",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "main": "lib/index.js",
   "homepage": "https://github.com/scarney81/pg-hstore",
   "bugs": {
