@@ -1,7 +1,7 @@
 {
   "author": "Seth Carney <scarney81@gmail.com> (https://github.com/scarney81)",
   "name": "pg-hstore",
-  "description": "An module for serializing and deserializing JSON data in to hstore format",
+  "description": "A module for serializing and deserializing JSON data into hstore format",
   "private": false,
   "keywords": [
     "pg",
